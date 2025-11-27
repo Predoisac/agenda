@@ -37,7 +37,7 @@ class ServiceClient {
         Pastclient.email = email || Pastclient.email
         Pastclient.password = password ? await bcrypt.hash(String(password), SALT) : Pastclient.password
 
-        Client.update(id, name, email, password)
+        Pastclient.save()
     }
     async Delete(id) {
         const Pastclient = await Client.findByPk(id)
@@ -49,7 +49,7 @@ class ServiceClient {
             throw new Error("Email ou senha inválidos.")
         }
 
-        const client = await User.findOne({ where: { email } })
+        const client = await Client.findOne({ where: { email } })
 
         if (!client || !(await bcrypt.compare(String(password), client.password))) {
             throw new Error("Email ou senha inválidos.")

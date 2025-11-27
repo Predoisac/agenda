@@ -1,4 +1,6 @@
 import Appointment from "../model/appointment.js"
+import Client from "./client.js"
+ 
 
 class ServiceAppointment {
     async FindAll() {
@@ -13,16 +15,17 @@ class ServiceAppointment {
 
         return appointment
     }
-    async Create(date, time, value, done) {
-        // if (!date || !time || !value || !done) {
-        //     throw new Error("favor preencher todos os campos")
-        // }
+    async Create(date, time, value, done, clientId) {
+        if (!date || !time || !value) {
+            throw new Error("favor preencher todos os campos")
+        }
 
         await Appointment.create({
             date,
             time,
             value,
-            done
+            done,
+            clientId
         })
     }
     async Update(id, date, time, value, done) {
@@ -32,7 +35,7 @@ class ServiceAppointment {
         PastAppointment.value = value || PastAppointment.value
         PastAppointment.done = done || PastAppointment.done
 
-        Appointment.update(id, date, time, value, done)
+        PastAppointment.save()
     }
     async Delete(id) {
         const PastAppointment = await Appointment.findByPk(id)

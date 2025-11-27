@@ -1,4 +1,5 @@
 import database from "../config/database.js";
+import Client from "./client.js";
 
 class Appointment {
     constructor() {
@@ -8,12 +9,15 @@ class Appointment {
                 primaryKey: true,
                 autoIncrement: true
             },
-            date: { type: database.db.Sequelize.DATE },
-            time: { type: database.db.Sequelize.TIME },
-            value: { type: database.db.Sequelize.DECIMAL },
-            done: { type: database.db.Sequelize.BOOLEAN }
-        })
+            date: { type: database.db.Sequelize.STRING },
+            time: { type: database.db.Sequelize.STRING },
+            value: { type: database.db.Sequelize.STRING },
+            done: { type: database.db.Sequelize.STRING },
+        }
+        )
+        this.model.belongsTo(Client)
     }
 }
+
 
 export default new Appointment().model

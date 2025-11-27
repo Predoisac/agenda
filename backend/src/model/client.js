@@ -1,4 +1,5 @@
 import database from "../config/database.js";
+import appointment from "./appointment.js";
 
 class Client {
     constructor() {
@@ -12,6 +13,8 @@ class Client {
             email: { type: database.db.Sequelize.STRING },
             password: { type: database.db.Sequelize.STRING }
         })
+
+        this.model.hasMany(appointment)
     }
 }
 

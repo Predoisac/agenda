@@ -29,8 +29,7 @@ export const deleteClient = async (id) => {
 }
 
 export const loginClient = async (email, password) => {
-    const response = await api
-        .post('/api/v1/login', { email, password })
+    const response = await api.post('/api/v1/login', { email, password })
 
    return response
 }

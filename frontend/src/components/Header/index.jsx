@@ -18,6 +18,17 @@ export default function Header() {
                                 Clientes
                             </button>
                         </Link>
+                        
+                }
+                {
+                    !token
+                        ? null
+                        : <Link to='/appointments'>
+                            <button>
+                                Agendamentos
+                            </button>
+                        </Link>
+                        
                 }
                 <Link to='/login'>
                     <button>
