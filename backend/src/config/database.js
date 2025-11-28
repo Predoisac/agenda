@@ -8,7 +8,7 @@ class Database {
 
     init() {
         this.db = new Sequelize({
-            dialect: PostgresDialect,
+            dialect: "postgres",
             database: 'agenda_8nus',
             host: 'dpg-d4l2d87gi27c73es2etg-a',
             username: 'agenda_8nus_user',
