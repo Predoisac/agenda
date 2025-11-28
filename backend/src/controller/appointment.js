@@ -1,4 +1,5 @@
 import ServiceAppointment from "../service/appointment.js"
+import client from "./client.js"
 
 class ControllerAppointment {
     async Findall(req, res) {
@@ -22,7 +23,6 @@ class ControllerAppointment {
     }
     async Create(req, res) {
         try {
-
             const { date, time, value, done } = req.body
             await ServiceAppointment.Create(date, time, value, done)
             res.status(201).send()

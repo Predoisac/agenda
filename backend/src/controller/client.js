@@ -53,7 +53,6 @@ class ControllerClient {
     async Login(req, res) {
         try {
             const {email, password} = req.body
-
             const token = await ServiceClient.Login(email, password)
             res.status(200).send({token})
         } catch (error) {

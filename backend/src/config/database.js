@@ -7,11 +7,11 @@ class Database {
 
     init() {
         this.db = new Sequelize({
-            database: 'agenda',
-            host: 'localhost',
-            username: 'root',
-            password: '',
-            dialect: 'mysql'
+            database: 'agenda_8nus',
+            host: 'dpg-d4l2d87gi27c73es2etg-a',
+            username: 'agenda_8nus_user',
+            password: 'rzzfiFLyXOevg02C2FP3zZyPx9Ucobfl',
+            dialect: 'postgres'
         })
     }
 }
