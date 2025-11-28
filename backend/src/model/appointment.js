@@ -15,7 +15,7 @@ class Appointment {
             done: { type: database.db.Sequelize.STRING },
         }
         )
-        this.model.belongsTo(Client)
+        // this.model.belongsTo(Client)
     }
 }
 

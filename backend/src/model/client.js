@@ -14,7 +14,7 @@ class Client {
             password: { type: database.db.Sequelize.STRING }
         })
 
-        this.model.hasMany(appointment)
+        // this.model.hasMany(appointment)
     }
 }
 
